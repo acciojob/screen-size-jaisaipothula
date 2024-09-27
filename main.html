@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen Size</title>
 </head>
 <body>
     <div id="sizeInfo">
-        <h1 id="screenSize"></h1>
+        <h1 id="dimensions">Width: 0 and Height: 0</h1>
     </div>
 
-    <script>
-        function updateScreenSize() {
-            const screenSize = document.getElementById('screenSize');
-            screenSize.textContent = `Width: ${window.innerWidth} and Height: ${window.innerHeight}`;
-        }
-
-        window.addEventListener('resize', updateScreenSize);
-        updateScreenSize(); // Call the function initially to set the initial size
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
