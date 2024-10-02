@@ -4,12 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen Size</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #sizeInfo {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div id="sizeInfo">
-        <h1 id="dimensions">Width: 0 and Height: 0</h1>
+        <h1 id="sizeText">Width: 0 and Height: 0</h1>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function updateSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            document.getElementById('sizeText').innerText = `Width: ${width} and Height: ${height}`;
+        }
+
+        // Initial size update
+        updateSize();
+
+        // Update size on window resize
+        window.addEventListener('resize', updateSize);
+    </script>
 </body>
 </html>
