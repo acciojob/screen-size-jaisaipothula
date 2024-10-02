@@ -2,7 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test Screen Size</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Size</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #sizeInfo {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div id="sizeInfo">
@@ -10,14 +25,19 @@
     </div>
 
     <script>
-        function updateSize() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            document.getElementById('sizeText').innerText = `Width: ${width} and Height: ${height}`;
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            function updateSize() {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                document.getElementById('sizeText').innerText = `Width: ${width} and Height: ${height}`;
+            }
 
-        window.addEventListener('load', updateSize);
-        window.addEventListener('resize', updateSize);
+            // Initial size update
+            updateSize();
+
+            // Update size on window resize
+            window.addEventListener('resize', updateSize);
+        });
     </script>
 </body>
 </html>
