@@ -25,17 +25,19 @@
     </div>
 
     <script>
-        function updateSize() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            document.getElementById('sizeText').innerText = `Width: ${width} and Height: ${height}`;
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            function updateSize() {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                document.getElementById('sizeText').innerText = `Width: ${width} and Height: ${height}`;
+            }
 
-        // Initial size update
-        updateSize();
+            // Initial size update
+            updateSize();
 
-        // Update size on window resize
-        window.addEventListener('resize', updateSize);
+            // Update size on window resize
+            window.addEventListener('resize', updateSize);
+        });
     </script>
 </body>
 </html>
